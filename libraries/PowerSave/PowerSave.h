@@ -12,10 +12,7 @@ class PowerSave{
     public:
         PowerSave();
 
-        void sleep1S();
-        void sleep2S();
-        void sleep4S();
-        void sleep8S();
+        void sleep(int seconds);
     };
 
 #endif
