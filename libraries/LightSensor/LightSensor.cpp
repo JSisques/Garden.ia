@@ -1,11 +1,11 @@
 #include "Arduino.h"
 #include "LightSensor.h"
 
-LightSensor::LightSensor(String inputPin){
+LightSensor::LightSensor(int inputPin){
     pin = inputPin;
 }
 
-void LightSensor::setPin(String inputPin){
+void LightSensor::setPin(int inputPin){
     pin = inputPin;
 }
 
@@ -13,7 +13,7 @@ void LightSensor::setLight(int inputLight){
     light = inputLight;
 }
 
-String LightSensor::getPin(){
+int LightSensor::getPin(){
     return pin;
 }
 

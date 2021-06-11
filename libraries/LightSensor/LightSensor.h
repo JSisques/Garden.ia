@@ -10,12 +10,12 @@ class LightSensor{
         int light;
 
     public:
-        LightSensor(String pin);
+        LightSensor(int pin);
 
-        void setPin(String pin);
+        void setPin(int pin);
         void setLight(int light);
 
-        String getPin();
+        int getPin();
         int getLight();
 
         void checkLight(); //Comprobamos la luminosidad y la metemos en el atributo
