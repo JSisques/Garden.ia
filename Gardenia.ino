@@ -3,9 +3,11 @@
 #include <CustomSerial.h>
 #include <LightSensor.h>
 
-void setup() {
+PowerSave powerSave;
 
+void setup() {
 }
 
 void loop() {
+    powerSave.sleep8S();
 }
