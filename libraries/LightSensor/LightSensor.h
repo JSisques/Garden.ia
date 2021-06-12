@@ -8,17 +8,23 @@ class LightSensor{
     private:
         int pin;
         int light;
+        int maxValue;
+        int minValue;
 
     public:
         LightSensor(int pin);
 
         void setPin(int pin);
         void setLight(int light);
+        void setMaxValue(int maxValue);
+        void setMinValue(int minValue);
 
         int getPin();
         int getLight();
+        int getMaxValue();
+        int getMinValue();
 
-        void checkLight(); //Comprobamos la luminosidad y la metemos en el atributo
+        int checkLight();
     };
 
 #endif
