@@ -6,15 +6,19 @@
 class WaterLevel{
 
     private:
+        String name;
         int pin;
         bool trigger;
 
     public:
+        WaterLevel();
         WaterLevel(int pin);
 
+        void setName(String name);
         void setPin(int pin);
         void setTrigger(bool trigger);
 
+        String getName();
         int getPin();
         bool getTrigger();
 
