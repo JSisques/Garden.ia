@@ -9,6 +9,10 @@ LightSensor::LightSensor(int inputPin){
     pin = inputPin;
 }
 
+void LightSensor::setName(String inputName){
+    name = inputName;
+}
+
 void LightSensor::setPin(int inputPin){
     pin = inputPin;
 }
@@ -23,6 +27,10 @@ void LightSensor::setMaxValue(int inputMaxValue){
 
 void LightSensor::setMinValue(int inputMinValue){
     minValue = inputMinValue;
+}
+
+String LightSensor::getName(){
+    return name;
 }
 
 int LightSensor::getPin(){

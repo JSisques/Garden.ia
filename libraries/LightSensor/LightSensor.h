@@ -6,6 +6,7 @@
 class LightSensor{
 
     private:
+        String name;
         int pin;
         int light;
         int maxValue;
@@ -14,12 +15,14 @@ class LightSensor{
     public:
         LightSensor();
         LightSensor(int pin);
-
+        
+        void setName(int name);
         void setPin(int pin);
         void setLight(int light);
         void setMaxValue(int maxValue);
         void setMinValue(int minValue);
 
+        String getName();
         int getPin();
         int getLight();
         int getMaxValue();
