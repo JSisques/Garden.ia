@@ -10,6 +10,7 @@ class WaterPump{
         int pin;
 
     public:
+        WaterPump();
         WaterPump(String name, int pin);
 
         void setPin(int pin);

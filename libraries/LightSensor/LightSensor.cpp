@@ -1,6 +1,10 @@
 #include "Arduino.h"
 #include "LightSensor.h"
 
+LightSensor::LightSensor(){
+    
+}
+
 LightSensor::LightSensor(int inputPin){
     pin = inputPin;
 }

@@ -12,6 +12,7 @@ class SoilSensor{
         int minValue;
 
     public:
+        SoilSensor();
         SoilSensor(int pin, int maxValue, int minValue);
 
         void setPin(int pin);

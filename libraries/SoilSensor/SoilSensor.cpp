@@ -1,6 +1,10 @@
 #include "Arduino.h"
 #include "SoilSensor.h"
 
+SoilSensor::SoilSensor(){
+    
+}
+
 SoilSensor::SoilSensor(int inputPin, int inputMaxValue, int inputMinValue){
     pin = inputPin;
     maxValue = inputMaxValue;

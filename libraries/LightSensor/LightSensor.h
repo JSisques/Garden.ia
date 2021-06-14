@@ -12,6 +12,7 @@ class LightSensor{
         int minValue;
 
     public:
+        LightSensor();
         LightSensor(int pin);
 
         void setPin(int pin);

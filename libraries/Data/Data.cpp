@@ -8,6 +8,12 @@ Data::Data(){
     thresholdSoilHumidity = 50;
 }
 
+Data::Data(WaterPump wp, LightSensor ls, SoilSensor ss){
+    waterPump = wp;
+    lightSensor = ls;
+    soilSensor = ss;
+}
+
 void Data::setLight(int inputLight){
     light = inputLight;
 }
@@ -117,5 +123,5 @@ void Data::resetData(){
     waterLevel = 0;
     soilHumidity = 0;
     trigger = false;
-    
+
 }
