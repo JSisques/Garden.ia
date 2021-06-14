@@ -5,7 +5,8 @@ WaterLevel::WaterLevel(){
 
 }
 
-WaterLevel::WaterLevel(int inputPin){
+WaterLevel::WaterLevel(String inputName, int inputPin){
+    name = inputName;
     pin = inputPin;
 
     pinMode(pin, INPUT);

@@ -12,7 +12,7 @@ class WaterLevel{
 
     public:
         WaterLevel();
-        WaterLevel(int pin);
+        WaterLevel(String name, int pin);
 
         void setName(String name);
         void setPin(int pin);

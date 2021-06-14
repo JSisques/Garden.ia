@@ -4,9 +4,9 @@
 #include <LightSensor.h>
 #include <Data.h>
 
-WaterPump wp1("Maceta 1", 11);
-WaterPump wp2("Maceta 2", 12);
-WaterPump wp3("Maceta 3", 13);
+WaterPump wp1("Bomba 1", 11);
+WaterPump wp2("Bomba 2", 12);
+WaterPump wp3("Bomba 3", 13);
 WaterLevel wl(10);
 LightSensor ls(9);
 PowerSave ps;
