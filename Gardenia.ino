@@ -11,7 +11,7 @@ void setup() {
 void loop() {
 
   //Check light
-
+  
   //Check soil humidity
   //Check water level
   //Water (optional)
