@@ -106,10 +106,11 @@ bool Data::checkNeedWater(){
 
     bool response = false;
 
-    if(soilHumidity <= thresholdSoilHumidity && light <= thresholdLight){
-        
-        response = true;
+    soilHumidity = soilSensor.getHumidity();
+    light = lightSensor.checkLight();
 
+    if (soilHumidity <= thresholdSoilHumidity && light <= thresholdLight){
+        response = true;
     }
 
     return response;
