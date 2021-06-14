@@ -8,7 +8,8 @@ Data::Data(){
     thresholdSoilHumidity = 50;
 }
 
-Data::Data(WaterPump wp, LightSensor ls, SoilSensor ss){
+Data::Data(String inputName, WaterPump wp, LightSensor ls, SoilSensor ss){
+    name = inputName;
     waterPump = wp;
     lightSensor = ls;
     soilSensor = ss;

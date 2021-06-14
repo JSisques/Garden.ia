@@ -30,7 +30,7 @@ class Data{
 
     public:
         Data();
-        Data(WaterPump wp, LightSensor ls, SoilSensor ss);
+        Data(String name, WaterPump wp, LightSensor ls, SoilSensor ss);
         
         void setName(String name);
         void setLight(int light);
