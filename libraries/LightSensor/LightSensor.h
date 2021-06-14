@@ -14,9 +14,9 @@ class LightSensor{
 
     public:
         LightSensor();
-        LightSensor(int pin);
+        LightSensor(String name, int pin);
         
-        void setName(int name);
+        void setName(String name);
         void setPin(int pin);
         void setLight(int light);
         void setMaxValue(int maxValue);

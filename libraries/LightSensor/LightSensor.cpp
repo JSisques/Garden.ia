@@ -5,7 +5,8 @@ LightSensor::LightSensor(){
     
 }
 
-LightSensor::LightSensor(int inputPin){
+LightSensor::LightSensor(String inputName, int inputPin){
+    name = inputName;
     pin = inputPin;
 }
 
