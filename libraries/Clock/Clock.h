@@ -1,15 +1,22 @@
-#ifndef Json_h
-#define Json_h
+#ifndef Clock_h
+#define Clock_h
 
 #include "Arduino.h"
-#include "ArduinoJson.h"
 
-class Json{
+class Clock{
 
     private:
+        int hour;
 
     public:
-        Json();
+        Clock();
+
+        void setHour(int hour);
+
+        int getHour();
+
+        String increaseTime(int hours);
+        
     };
 
 #endif

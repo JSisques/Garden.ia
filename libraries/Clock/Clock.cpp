@@ -1,6 +1,5 @@
 #include "Arduino.h"
-#include "Json.h"
-#include "ArduinoJson.h"
+#include "Clock.h"
 
-Json::Json(){
+Clock::Clock(){
 }
