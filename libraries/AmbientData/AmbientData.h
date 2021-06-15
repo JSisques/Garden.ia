@@ -2,6 +2,7 @@
 #define AmbientData_h
 
 #include "Arduino.h"
+#include "LightSensor.h"
 #include "TemperatureSensor.h"
 
 class AmbientData{
@@ -12,42 +13,50 @@ class AmbientData{
         int light;
         float temperature;
         float humidity;
-        float thermalTemperature;
+        float thermalSensation;
 
         int thresholdLight;
         int thresholdTemperature;
         int thresholdHumidity;
-        int thresholdThermalTemperature;
+        int thresholdThermalSensation;
 
         TemperatureSensor temperatureSensor;
+        LightSensor lightSensor;
 
     public:
         AmbientData();
-        AmbientData(String name, TemperatureSensor ts);
+        AmbientData(String name, TemperatureSensor ts, LightSensor ls);
         
         void setName(String name);
         void setLight(int light);
         void setTemperature(float temperature);
         void setHumidity(float humidity);
-        void setThermalTemperature(float thermalTemperature);
+        void setThermalSensation(float thermalSensation);
         void setThresholdLight(int thresholdLight);
-        void setThresholdTemperature(int thresholdTemperature);
-        void setThresholdHumidity(int thresholdHumidity);
-        void setThresholdThermalTemperature(float thresholdThermalTemperature);
+        void setThresholdTemperature(float thresholdTemperature);
+        void setThresholdHumidity(float thresholdHumidity);
+        void setThresholdThermalSensation(float thresholdThermalSensation);
         void setTemperatureSensor(TemperatureSensor temperatureSensor);
+        void setLightSensor(LightSensor lightSensor);
 
         String getName();
         int getLight();
         float getTemperature();
         float getHumidity();
-        float getThermalTemperature();
+        float getThermalSensation();
         int getThresholdLight();
         float getThresholdTemperature();
         float getThresholdHumidity();
-        float getThresholdThermalTemperature();
+        float getThresholdThermalSensation();
         TemperatureSensor getTemperatureSensor();
+        LightSensor getLightSensor();
 
         void resetAmbientData();
+        void checkAllData();
+        int checkLight();
+        float checkTemperature();
+        float checkHumidity();
+        float checkThermalSensation();
     };
 
 #endif

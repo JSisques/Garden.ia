@@ -1,17 +1,19 @@
 #include "Arduino.h"
 #include "TemperatureSensor.h"
+#include "LightSensor.h"
 #include "AmbientData.h"
 
 AmbientData::AmbientData(){
     thresholdLight = 20;
     thresholdTemperature = 20;
     thresholdHumidity = 50;
-    thresholdThermalTemperature = 20;
+    thresholdThermalSensation = 20;
 }
 
-AmbientData::AmbientData(String inputName, TemperatureSensor ts){
+AmbientData::AmbientData(String inputName, TemperatureSensor ts, LightSensor ls){
     name = inputName;
     temperatureSensor = ts;
+    lightSensor = ls;
 }
 
 void AmbientData::setLight(int inputLight){
@@ -26,8 +28,8 @@ void AmbientData::setHumidity(float inputHumidity){
     humidity = inputHumidity;
 }
 
-void AmbientData::setThermalTemperature(float inputThermalTemperature){
-    thermalTemperature = inputThermalTemperature;
+void AmbientData::setThermalSensation(float inputThermalSensation){
+    thermalSensation = inputThermalSensation;
 }
 
 
@@ -40,11 +42,19 @@ void AmbientData::setThresholdTemperature(float inputThresholdTemperature){
 }
 
 void AmbientData::setThresholdHumidity(float inputThresholdHumidity){
-    thresholdSoilHumidity = inputThresholdHumidity;
+    thresholdHumidity = inputThresholdHumidity;
 }
 
-void AmbientData::setThresholdThermalTemperature(float inputThresholdThermalTemperature){
-    thresholdThermalTemperature = inputThresholdThermalTemperature;
+void AmbientData::setThresholdThermalSensation(float inputThresholdThermalSensation){
+    thresholdThermalSensation = inputThresholdThermalSensation;
+}
+
+void AmbientData::setTemperatureSensor(TemperatureSensor inputTemperatureSensor){
+    temperatureSensor = inputTemperatureSensor;
+}
+
+void AmbientData::setLightSensor(LightSensor inputLightSensor){
+    lightSensor = inputLightSensor;
 }
 
 int AmbientData::getLight(){
@@ -59,8 +69,8 @@ float AmbientData::getHumidity(){
     return humidity;
 }
 
-float AmbientData::getThermalTemperature(){
-    return thermalTemperature;
+float AmbientData::getThermalSensation(){
+    return thermalSensation;
 }
 
 int AmbientData::getThresholdLight(){
@@ -75,15 +85,49 @@ float AmbientData::getThresholdHumidity(){
     return thresholdHumidity;
 }
 
-float AmbientData::getThermalTemperature(){
-    return thermalTemperature;
+float AmbientData::getThermalSensation(){
+    return thermalSensation;
+}
+
+TemperatureSensor AmbientData::getTemperatureSensor(){
+    return temperatureSensor;
+}
+
+LightSensor AmbientData::getLightSensor(){
+    return lightSensor;
 }
 
 void AmbientData::resetAmbientData(){
-
     temperature = 0;
     humidity = 0;
     light = 0;
-    thermalTemperature = 0;
+    thermalSensation = 0;
+}
 
+void AmbientData::checkAllData(){
+    temperature = checkTemperature();
+    humidity = checkHumidity();
+    light = checkLight();
+    thermalSensation = checkThermalSensation();
+}
+
+int AmbientData::checkLight(){
+    light = lightSensor.checkLight();
+    return light;
+}
+
+float AmbientData::checkTemperature(){
+    temperature = temperatureSensor.checkTemperature();
+    return temperature;
+}
+
+float AmbientData::checkHumidity(){
+    humidity = temperatureSensor.checkHumidity();
+    return humidity;
+}
+
+
+float AmbientData::checkThermalSensation(){
+    thermalSensation = temperatureSensor.checkThermalSensation();
+    return thermalSensation;
 }
