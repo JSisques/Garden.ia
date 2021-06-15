@@ -26,6 +26,10 @@ void setup() {
 
 void loop() {
 
+  //Check air temperature
+  //Check air humidity
+  //Check thermal temperature 
+
   //Check light
   d1.setLight(ls.checkLight());
   d2.setLight(ls.checkLight());
