@@ -95,8 +95,8 @@ float AmbientData::getThresholdHumidity(){
     return thresholdHumidity;
 }
 
-float AmbientData::getThermalSensation(){
-    return thermalSensation;
+float AmbientData::getThresholdThermalSensation(){
+    return thresholdThermalSensation;
 }
 
 TemperatureSensor AmbientData::getTemperatureSensor(){

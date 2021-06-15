@@ -5,11 +5,11 @@ SoilSensor::SoilSensor(){
     
 }
 
-SoilSensor::SoilSensor(String inputName, int inputPin, int inputMaxValue, int inputMinValue){
+SoilSensor::SoilSensor(String inputName, int inputPin){
     name = inputName;
     pin = inputPin;
-    maxValue = inputMaxValue;
-    minValue = inputMinValue;
+    maxValue = 1024;
+    minValue = 0;
 }
 
 void SoilSensor::setName(String inputName){
