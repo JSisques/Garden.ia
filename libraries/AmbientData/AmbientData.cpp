@@ -2,6 +2,7 @@
 #include "TemperatureSensor.h"
 #include "LightSensor.h"
 #include "AmbientData.h"
+#include "WaterLevel.h"
 
 AmbientData::AmbientData(){
     thresholdLight = 20;
@@ -10,10 +11,11 @@ AmbientData::AmbientData(){
     thresholdThermalSensation = 20;
 }
 
-AmbientData::AmbientData(String inputName, TemperatureSensor ts, LightSensor ls){
+AmbientData::AmbientData(String inputName, TemperatureSensor ts, LightSensor ls, WaterLevel wl){
     name = inputName;
     temperatureSensor = ts;
     lightSensor = ls;
+    waterLevelSensor = wl;
 }
 
 void AmbientData::setLight(int inputLight){
@@ -30,6 +32,10 @@ void AmbientData::setHumidity(float inputHumidity){
 
 void AmbientData::setThermalSensation(float inputThermalSensation){
     thermalSensation = inputThermalSensation;
+}
+
+void AmbientData::setWaterLevel(bool inputWaterLevel){
+    waterLevel = inputWaterLevel;
 }
 
 
@@ -71,6 +77,10 @@ float AmbientData::getHumidity(){
 
 float AmbientData::getThermalSensation(){
     return thermalSensation;
+}
+
+bool AmbientData::getWaterLevel(){
+    return waterLevel;
 }
 
 int AmbientData::getThresholdLight(){
@@ -130,4 +140,9 @@ float AmbientData::checkHumidity(){
 float AmbientData::checkThermalSensation(){
     thermalSensation = temperatureSensor.checkThermalSensation();
     return thermalSensation;
+}
+
+bool AmbientData::checkWaterLevel(){
+    waterLevel = waterLevelSensor.checkWaterLevel();
+    return waterLevel;
 }

@@ -3,7 +3,6 @@
 
 #include "Arduino.h"
 #include "WaterPump.h"
-#include "LightSensor.h"
 #include "SoilSensor.h"
 
 class Data{
@@ -11,14 +10,11 @@ class Data{
     private:
         String name;
 
-        int light;
-        int temperature;
         int humidity;
         int waterLevel;
         int soilHumidity;
         bool trigger;
 
-        int thresholdLight;
         int thresholdTemperature;
         int thresholdHumidity;
         int thresholdWaterLevel;
