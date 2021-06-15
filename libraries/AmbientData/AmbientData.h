@@ -1,71 +1,53 @@
-#ifndef Data_h
-#define Data_h
+#ifndef AmbientData_h
+#define AmbientData_h
 
 #include "Arduino.h"
-#include "WaterPump.h"
-#include "LightSensor.h"
-#include "SoilSensor.h"
+#include "TemperatureSensor.h"
 
-class Data{
+class AmbientData{
 
     private:
         String name;
 
         int light;
-        int temperature;
-        int humidity;
-        int waterLevel;
-        int soilHumidity;
-        bool trigger;
+        float temperature;
+        float humidity;
+        float thermalTemperature;
 
         int thresholdLight;
         int thresholdTemperature;
         int thresholdHumidity;
-        int thresholdWaterLevel;
-        int thresholdSoilHumidity;
+        int thresholdThermalTemperature;
 
-        WaterPump waterPump;
-        LightSensor lightSensor;
-        SoilSensor soilSensor;
+        TemperatureSensor temperatureSensor;
 
     public:
-        Data();
-        Data(String name, WaterPump wp, LightSensor ls, SoilSensor ss);
+        AmbientData();
+        AmbientData(String name, TemperatureSensor ts);
         
         void setName(String name);
         void setLight(int light);
-        void setTemperature(int temperature);
-        void setHumidity(int humidity);
-        void setWaterLevel(int waterLevel);
-        void setSoilHumidity(int soilHumidity);
+        void setTemperature(float temperature);
+        void setHumidity(float humidity);
+        void setThermalTemperature(float thermalTemperature);
         void setThresholdLight(int thresholdLight);
         void setThresholdTemperature(int thresholdTemperature);
         void setThresholdHumidity(int thresholdHumidity);
-        void setThresholdWaterLevel(int thresholdWaterLevel);
-        void setThresholdSoilHumidity(int thresholdSoilHumidity);
-        void setTrigger(bool trigger);
-        void setWaterPump(WaterPump waterPump);
-        void setLightSensor(LightSensor lightSensor);
-        void setSoilSensor(SoilSensor soilSensor);
+        void setThresholdThermalTemperature(float thresholdThermalTemperature);
+        void setTemperatureSensor(TemperatureSensor temperatureSensor);
 
         String getName();
         int getLight();
-        int getTemperature();
-        int getHumidity();
-        int getWaterLevel();
-        int getSoilHumidity();
+        float getTemperature();
+        float getHumidity();
+        float getThermalTemperature();
         int getThresholdLight();
-        int getThresholdTemperature();
-        int getThresholdHumidity();
-        int getThresholdWaterLevel();
-        int getThresholdSoilHumidity();
-        bool getTrigger();
-        WaterPump getWaterPump();
-        LightSensor getLightSensor();
-        SoilSensor getSoilSensor();
+        float getThresholdTemperature();
+        float getThresholdHumidity();
+        float getThresholdThermalTemperature();
+        TemperatureSensor getTemperatureSensor();
 
-        bool checkNeedWater();
-        void resetData();
+        void resetAmbientData();
     };
 
 #endif

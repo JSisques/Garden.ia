@@ -1,129 +1,89 @@
 #include "Arduino.h"
-#include "Data.h"
+#include "TemperatureSensor.h"
+#include "AmbientData.h"
 
-Data::Data(){
+AmbientData::AmbientData(){
+    thresholdLight = 20;
     thresholdTemperature = 20;
     thresholdHumidity = 50;
-    thresholdWaterLevel = 20;
-    thresholdSoilHumidity = 50;
+    thresholdThermalTemperature = 20;
 }
 
-Data::Data(String inputName, WaterPump wp, LightSensor ls, SoilSensor ss){
+AmbientData::AmbientData(String inputName, TemperatureSensor ts){
     name = inputName;
-    waterPump = wp;
-    lightSensor = ls;
-    soilSensor = ss;
+    temperatureSensor = ts;
 }
 
-void Data::setLight(int inputLight){
+void AmbientData::setLight(int inputLight){
     light = inputLight;
 }
 
-void Data::setTemperature(int inputTemperature){
+void AmbientData::setTemperature(float inputTemperature){
     temperature = inputTemperature;
 }
 
-void Data::setHumidity(int inputHumidity){
+void AmbientData::setHumidity(float inputHumidity){
     humidity = inputHumidity;
 }
 
-void Data::setWaterLevel(int inputWaterLevel){
-    waterLevel = inputWaterLevel;
+void AmbientData::setThermalTemperature(float inputThermalTemperature){
+    thermalTemperature = inputThermalTemperature;
 }
 
-void Data::setSoilHumidity(int inputSoilHumidity){
-    soilHumidity = inputSoilHumidity;
-}
 
-void Data::setThresholdLight(int inputThresholdLight){
+void AmbientData::setThresholdLight(int inputThresholdLight){
     thresholdLight = inputThresholdLight;
 }
 
-void Data::setThresholdTemperature(int inputThresholdTemperature){
+void AmbientData::setThresholdTemperature(float inputThresholdTemperature){
     thresholdTemperature = inputThresholdTemperature;
 }
 
-void Data::setThresholdHumidity(int inputThresholdHumidity){
+void AmbientData::setThresholdHumidity(float inputThresholdHumidity){
     thresholdSoilHumidity = inputThresholdHumidity;
 }
 
-void Data::setThresholdWaterLevel(int inputThresholdWaterLevel){
-    thresholdWaterLevel = inputThresholdWaterLevel;
+void AmbientData::setThresholdThermalTemperature(float inputThresholdThermalTemperature){
+    thresholdThermalTemperature = inputThresholdThermalTemperature;
 }
 
-void Data::setThresholdSoilHumidity(int inputThresholdSoilHumidity){
-    thresholdSoilHumidity = inputThresholdSoilHumidity;
-}
-
-void Data::setTrigger(bool inputTrigger){
-    trigger = inputTrigger;
-}
-
-int Data::getLight(){
+int AmbientData::getLight(){
     return light;    
 }
 
-int Data::getTemperature(){
+float AmbientData::getTemperature(){
     return temperature;    
 }
 
-int Data::getHumidity(){
+float AmbientData::getHumidity(){
     return humidity;
 }
 
-int Data::getWaterLevel(){
-    return waterLevel;
+float AmbientData::getThermalTemperature(){
+    return thermalTemperature;
 }
 
-int Data::getSoilHumidity(){
-    return soilHumidity;
-}
-
-int Data::getThresholdLight(){
+int AmbientData::getThresholdLight(){
     return thresholdLight;
 }
 
-int Data::getThresholdTemperature(){
+float AmbientData::getThresholdTemperature(){
     return thresholdTemperature;
 }
 
-int Data::getThresholdHumidity(){
+float AmbientData::getThresholdHumidity(){
     return thresholdHumidity;
 }
 
-int Data::getThresholdWaterLevel(){
-    return thresholdWaterLevel;
+float AmbientData::getThermalTemperature(){
+    return thermalTemperature;
 }
 
-int Data::getThresholdSoilHumidity(){
-    return thresholdSoilHumidity;
-}
-
-bool Data::getTrigger(){
-    return trigger;
-}
-
-bool Data::checkNeedWater(){
-
-    bool response = false;
-
-    soilHumidity = soilSensor.getHumidity();
-    light = lightSensor.checkLight();
-
-    if (soilHumidity <= thresholdSoilHumidity && light <= thresholdLight){
-        response = true;
-    }
-
-    return response;
-
-}
-
-void Data::resetData(){
+void AmbientData::resetAmbientData(){
 
     temperature = 0;
     humidity = 0;
-    waterLevel = 0;
-    soilHumidity = 0;
-    trigger = false;
+    light = 0;
+    thermalTemperature = 0;
 
 }
