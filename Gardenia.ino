@@ -13,9 +13,9 @@ LightSensor ls("Light sensor", 9);
 WaterLevel wl("Water level sensor", 10);
 AmbientData ad("Ambient data", ts, ls, wl);
 
-WaterPump wp1("Bomba 1", 11);
-WaterPump wp2("Bomba 2", 12);
-WaterPump wp3("Bomba 3", 13);
+WaterPump wp1("Pump 1", 11);
+WaterPump wp2("Pump 2", 12);
+WaterPump wp3("Pump 3", 13);
 
 SoilSensor ss1("Soil sensor 1", 10);
 SoilSensor ss2("Soil sensor 2", 10);
