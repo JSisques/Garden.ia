@@ -20,7 +20,7 @@ All the components that we need are in [this list](), it has all the links and t
 - Arduino IDE
 
 ## :wrench: Installation
-In order to install all the depencies needed for this project we have to copy all the folders in [requirements]() and put it on the general library folder.
+In order to install all the depencies needed for this project we have to copy all the folders in [requirements](https://github.com/JSisques/Garden.ia/tree/develop/requirements) and put it on the general library folder.
 
 ## :black_nib: Authors
 #### :bust_in_silhouette: Javier Plaza Sisqués
